@@ -580,6 +580,7 @@ window.PAC_CONFIG = {
   "commanditaire": "Théo Marczak",
   "entreprise": "Lumio Health",
   "dispositif": "PAC",
+  "accroche": "Tu es mandaté·e par <strong>Théo Marczak, CEO de Lumio Health</strong>, pour produire une analyse stratégique complète du marché wearable stress B2B avant le board du 10 avril avec Jakob Rein (Northgate Capital). L'enjeu est direct&nbsp;: cartographier les acteurs, identifier les opportunités, et formuler des recommandations défendables face à un investisseur qui veut des données, pas des intuitions. Tu as accès aux emails de l'équipe, aux retours terrain B2B de Camille Ott, à la veille concurrentielle de Yassine Morel et à l'étude de marché Xerfi. <em>Withings Pro et Garmin Health avancent vite. La fenêtre se referme.</em>",
   "note_reflexive": false,
   "temps": [
     {
