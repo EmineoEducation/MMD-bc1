@@ -491,9 +491,73 @@ window.LUMIO_DATA = {
     "footer": "<em>1 jour fictif ≈ 11 minutes réelles · ratio ×74</em>"
   },
   "trash": {
-    "title": "La corbeille est vide.",
-    "body": "Mais l'idée est bonne. La plupart des consultants commencent par jeter quelque chose."
-  },
+  "items": [
+    {
+      "name": "planning_v0.mpp",
+      "icon": "📊",
+      "size": "980 Ko",
+      "date": "sept.",
+      "isEgg": false
+    },
+    {
+      "name": "notes_perso.txt",
+      "icon": "📄",
+      "size": "4 Ko",
+      "date": "sept.",
+      "isEgg": false
+    },
+    {
+      "name": "Capture WhatsApp — Camille.png",
+      "icon": "🖼",
+      "size": "204 Ko",
+      "date": "13 mars",
+      "isEgg": true
+    }
+  ],
+  "egg": {
+    "contact": "Camille Ott",
+    "status": "vu à 21:03",
+    "meKey": "sonia",
+    "badge": "Conversation non destinée au dossier",
+    "messages": [
+      {
+        "from": "camille",
+        "text": "Sonia faut que je te dise un truc. Théo a déjà parlé du positionnement à Jakob, à un dîner la semaine dernière",
+        "time": "20:48"
+      },
+      {
+        "from": "camille",
+        "text": "il lui a vendu un truc genre « premium inclusif ». Sans nous. Sans l'analyse.",
+        "time": "20:48"
+      },
+      {
+        "from": "sonia",
+        "text": "… il a promis quoi exactement ?",
+        "time": "20:51"
+      },
+      {
+        "from": "camille",
+        "text": "un positionnement RSE premium inclusif. Si notre analyse valide pas ça, Théo est en porte-à-faux avec Northgate. On est coincées",
+        "time": "20:53"
+      },
+      {
+        "from": "sonia",
+        "text": "C'est pour ça que les recommandations doivent orienter, pas juste décrire.",
+        "time": "20:55"
+      },
+      {
+        "from": "sonia",
+        "text": "Je te laisse gérer le message. Mais l'analyse reste l'analyse — on ne maquille pas les données pour coller à un dîner.",
+        "time": "20:56"
+      },
+      {
+        "from": "camille",
+        "text": "ok. mais si ça part en vrille au board, c'est nous deux qui prenons",
+        "time": "20:58"
+      }
+    ]
+  }
+},
   "slack": {
     "workspace": "Lumio Health",
     "channels": [
