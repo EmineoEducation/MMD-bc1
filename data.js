@@ -638,6 +638,26 @@ window.LUMIO_DATA = {
 
 window.PAC_CONFIG = {
   "bloc": "bc1",
+  accroche_namescreen: {
+    "subtitle": "Analyser le besoin digital",
+    "role": "consultant·e digital externe",
+    "intro": "Tu es {{STUDENT}}, consultant·e mandaté·e par Théo Marczak (CEO de Lumio Health) pour cartographier le marché du wearable anti-stress et analyser la demande de projet digital. Veille sectorielle, étude concurrentielle, brief commanditaire : tu produis l'analyse d'une demande de projet digital (E1) qui orientera le lancement de l'offre B2B.",
+    "ratio_label": "3 semaines dans la vraie vie",
+    "regles": [
+      {
+        "ico": "📄",
+        "txt": "Tout ce que tu sais, c'est dans les documents de veille et le brief du poste de mission."
+      },
+      {
+        "ico": "🤐",
+        "txt": "Le jury évalue la rigueur de ta veille, la sélection des informations et la qualité de ta reformulation du besoin."
+      },
+      {
+        "ico": "💬",
+        "txt": "Quand tu as une analyse solide → Slack → ton commanditaire. Sa réaction débloque la suite."
+      }
+    ]
+  },
   "titre": "Analyser l'environnement et les besoins digitaux d'un commanditaire",
   "epreuve": "E1. Analyse d'une demande de projet digital",
   "deadline": "14 mars 2025 · 18h00",
