@@ -398,7 +398,10 @@ function Desktop({ onLogout }) {
 
   // Signature d'une cible : deux ouvertures avec la même cible = même fenêtre.
   // Cibles distinctes (autre doc, autre portrait, autre dossier) = nouvelles fenêtres.
+  // Exception : le navigateur reste une fenêtre unique et accumule les onglets
+  // (portraits, articles), comme un vrai navigateur.
   const winSignature = (app, props = {}) => {
+    if (app === 'browser') return 'browser::single';
     const p = props || {};
     const key = p.openDoc || p.openId || p.openNote || p.openPortrait || p.openFolder || p.openTab || '';
     return app + '::' + key;
@@ -450,41 +453,83 @@ function Desktop({ onLogout }) {
 }
 
 // ═════ Jefferson FAB ═══════════════════════════════════════
-// Bouton flottant en bas à droite (hors dock). 3 états visuels :
-// idle (gris), talking (animé quand fenêtre ouverte), alert (badge rouge).
+// Compagnon flottant bas-droite (hors dock). Présence de marque assumée :
+// pastille pétrole→menthe, anneau, bulle d'accroche périodique (découvrabilité),
+// label explicite, micro-animations. États : idle / talking (fenêtre ouverte).
 function JeffersonFab({ openApp, isOpen }) {
   const Icon = window.JeffersonIcon;
   const [hover, setHover] = useWmState(false);
+  const [hint, setHint] = useWmState(false);
+  const [dismissed, setDismissed] = useWmState(false);
+
   useWmEffect(() => {
     if (!document.getElementById('jefferson-fab-style')) {
       const s = document.createElement('style'); s.id = 'jefferson-fab-style';
-      s.textContent = '@keyframes jefferson-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}.jefferson-talking{animation:jefferson-pulse 1.4s ease-in-out infinite}';
+      s.textContent = `
+        @keyframes jeff-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+        @keyframes jeff-in{0%{opacity:0;transform:translateY(14px) scale(.8)}100%{opacity:1;transform:translateY(0) scale(1)}}
+        @keyframes jeff-ring{0%{box-shadow:0 0 0 0 rgba(93,226,152,0.5)}70%{box-shadow:0 0 0 14px rgba(93,226,152,0)}100%{box-shadow:0 0 0 0 rgba(93,226,152,0)}}
+        @keyframes jeff-hint{0%{opacity:0;transform:translateX(10px)}100%{opacity:1;transform:translateX(0)}}
+        .jeff-talking{animation:jeff-pulse 1.5s ease-in-out infinite}
+        .jeff-ring{animation:jeff-ring 2.4s ease-out infinite}
+      `;
       document.head.appendChild(s);
     }
   }, []);
+
+  // Bulle d'accroche : apparaît à ~8s puis périodiquement tant que Jefferson n'a pas été ouvert.
+  useWmEffect(() => {
+    if (dismissed || isOpen) { setHint(false); return; }
+    const first = setTimeout(() => setHint(true), 8000);
+    const hideFirst = setTimeout(() => setHint(false), 8000 + 9000);
+    const loop = setInterval(() => {
+      setHint(true); setTimeout(() => setHint(false), 9000);
+    }, 60000);
+    return () => { clearTimeout(first); clearTimeout(hideFirst); clearInterval(loop); };
+  }, [dismissed, isOpen]);
+
+  const open = () => { setDismissed(true); setHint(false); openApp('jefferson'); };
+  const state = isOpen ? 'talking' : 'idle';
+  const showHint = hint && !isOpen && !dismissed;
+
   return (
-    <div style={{ position: 'fixed', bottom: 18, right: 22, zIndex: 9998, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
+    <div style={{ position: 'fixed', bottom: 18, right: 20, zIndex: 9998, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, animation: 'jeff-in 420ms cubic-bezier(.34,1.56,.64,1)' }}>
+      {/* Bulle d'accroche */}
+      {showHint && (
+        <div onClick={open}
+          style={{ position: 'absolute', bottom: 78, right: 0, width: 210, background: 'white', borderRadius: 14, borderBottomRightRadius: 4, padding: '11px 14px', boxShadow: '0 12px 30px rgba(11,43,45,0.22), 0 0 0 0.5px rgba(20,24,36,0.06)', cursor: 'pointer', animation: 'jeff-hint 300ms ease-out' }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#134547', marginBottom: 2 }}>Jefferson, ton guide</div>
+          <div style={{ fontSize: 11.5, color: 'var(--ink-soft)', lineHeight: 1.45 }}>Bloqué·e ? Je t'oriente sans te donner les réponses. Clique quand tu veux.</div>
+          <button onClick={(e) => { e.stopPropagation(); setDismissed(true); setHint(false); }}
+            style={{ position: 'absolute', top: 6, right: 8, background: 'transparent', border: 'none', color: 'var(--ink-faint)', fontSize: 13, cursor: 'pointer', lineHeight: 1 }}>×</button>
+        </div>
+      )}
+
+      {/* Pastille compagnon */}
       <button
-        onClick={() => openApp('jefferson')}
+        onClick={open}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        title="Jefferson · Guide PAC"
-        className={isOpen ? 'jefferson-talking' : ''}
+        title="Jefferson · ton guide de mission"
+        className={isOpen ? 'jeff-talking' : (showHint ? 'jeff-ring' : '')}
         style={{
-          width: 60, height: 60, borderRadius: '50%',
-          background: 'rgba(245,243,239,0.78)',
-          backdropFilter: 'blur(20px) saturate(1.4)',
-          WebkitBackdropFilter: 'blur(20px) saturate(1.4)',
-          border: '1px solid rgba(255,255,255,0.5)',
-          boxShadow: hover ? '0 14px 36px rgba(20,24,36,0.28)' : '0 8px 22px rgba(20,24,36,0.18)',
-          cursor: 'pointer', padding: 0,
+          width: 74, height: 74, borderRadius: '50%',
+          background: 'radial-gradient(circle at 35% 30%, #5DE298 0%, #1f8f5e 55%, #134547 100%)',
+          border: '2.5px solid rgba(255,255,255,0.92)',
+          boxShadow: hover ? '0 18px 40px rgba(11,43,45,0.4)' : '0 10px 26px rgba(11,43,45,0.3)',
+          cursor: 'pointer', padding: 0, position: 'relative',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          transition: 'transform 220ms cubic-bezier(.34,1.56,.64,1), box-shadow 220ms ease',
-          transform: hover ? 'translateY(-3px) scale(1.04)' : 'none'
+          transition: 'transform 240ms cubic-bezier(.34,1.56,.64,1), box-shadow 240ms ease',
+          transform: hover ? 'translateY(-4px) scale(1.06)' : 'none'
         }}>
-        {Icon ? <Icon size={42} /> : <span style={{ fontSize: 24 }}>🐰</span>}
+        <div style={{ width: 54, height: 54, borderRadius: '50%', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', boxShadow: 'inset 0 0 0 0.5px rgba(20,24,36,0.08)' }}>
+          {Icon ? <Icon size={50} state={state} /> : <span style={{ fontSize: 26 }}>🐰</span>}
+        </div>
+        {/* Pastille de présence */}
+        <span style={{ position: 'absolute', bottom: 3, right: 3, width: 15, height: 15, borderRadius: '50%', background: isOpen ? '#34c84a' : '#5DE298', border: '2.5px solid white', boxShadow: '0 1px 3px rgba(0,0,0,0.2)' }} />
       </button>
-      <div style={{ fontSize: 11, fontWeight: 600, color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.55)', letterSpacing: '0.01em', pointerEvents: 'none' }}>Jefferson</div>
+
+      <div style={{ fontSize: 11.5, fontWeight: 700, color: 'white', textShadow: '0 1px 4px rgba(11,43,45,0.65)', letterSpacing: '0.01em', pointerEvents: 'none' }}>Jefferson</div>
     </div>
   );
 }

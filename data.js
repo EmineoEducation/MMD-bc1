@@ -475,6 +475,35 @@ window.LUMIO_DATA = {
     { "app": "slack", "label": "Slack", "kind": "app" },
     { "app": "notepad", "label": "Mes notes.txt", "kind": "app" }
   ],
+  "voiceMemos": [
+    {
+      "title": "Débrief RDV — DRH secteur financier",
+      "author": "Camille Ott",
+      "role": "Responsable partenariats B2B",
+      "date": "5 mars 2025",
+      "context": "mémo dicté après rendez-vous",
+      "durationSec": 48,
+      "transcript": "Bon, je sors du rendez-vous avec le groupe financier. Premier réflexe de leur côté : la donnée. Avant même qu'on parle fonctionnalités, leur DSI veut savoir où les données sont hébergées et qui y a accès. HDS, RGPD — ils ne signeront rien sans audit. C'est verrouillant. Note pour Sonia : sans hébergement de santé certifié et sans réponse claire sur la souveraineté, on ne passe pas la porte des grands comptes. Je le remonte tel quel dans le CR."
+    },
+    {
+      "title": "Débrief RDV — RH grande distribution",
+      "author": "Camille Ott",
+      "role": "Responsable partenariats B2B",
+      "date": "8 mars 2025",
+      "context": "mémo dicté en voiture",
+      "durationSec": 41,
+      "transcript": "Rendez-vous distribution. Le sujet qui revient, c'est la résistance interne. La RH m'a dit, je cite à peu près : mon comité social va bloquer ça en cinq minutes si on ne construit pas un discours co-construit avec les syndicats dès le départ. La crainte, c'est la surveillance déguisée. Donc l'angle commercial pur ne suffit pas — il faut un volet dialogue social et anonymisation très en amont. À intégrer dans l'analyse des freins."
+    },
+    {
+      "title": "Note — attente mutuelles (Malakoff)",
+      "author": "Camille Ott",
+      "role": "Responsable partenariats B2B",
+      "date": "11 mars 2025",
+      "context": "mémo dicté",
+      "durationSec": 39,
+      "transcript": "Point mutuelles. Ce qui les intéresse, ce n'est pas la donnée individuelle, c'est la donnée collective. Verbatim Malakoff : si vous nous donnez une cartographie du stress par service ou par tranche horaire, on peut construire des plans d'action. Donc le produit gagnant, c'est un tableau de bord agrégé, anonymisé, sans accès nominatif. Et de plus en plus ils demandent du reporting RSE conforme CSRD — ça c'est nouveau par rapport à l'an dernier."
+    }
+  ],
   "calendar": {
     "monthLabel": "Mars",
     "todayLabel": "Jour 1 / 18",
