@@ -286,8 +286,21 @@ window.LUMIO_DATA = {
             "kind": "pdf",
             "name": "Guide de mission",
             "app": "pdf",
-            "props": {}
+            "props": { "openGuide": true }
           }
+        ]
+      },
+      "mission": {
+        "title": "Mission — Dossier complet",
+        "sidebar": "Mission",
+        "icon": "🗂",
+        "items": [
+          { "kind": "folder", "name": "Acte 1 — Ancrage", "folder": "acte1" },
+          { "kind": "folder", "name": "Acte 2 — Entrée affaire", "folder": "acte2" },
+          { "kind": "folder", "name": "Acte 3 — Diagnostic", "folder": "acte3" },
+          { "kind": "folder", "name": "Acte 4 — Production", "folder": "acte4" },
+          { "kind": "folder", "name": "Acte 5 — Réflexion", "folder": "acte5" },
+          { "kind": "folder", "name": "Portraits équipe", "folder": "portraits" }
         ]
       },
       "acte1": {
@@ -300,7 +313,7 @@ window.LUMIO_DATA = {
             "name": "Brief stratégique — Analyse",
             "app": "mail",
             "props": {
-              "docId": "DOC-01"
+              "openId": "DOC-01"
             }
           },
           {
@@ -308,7 +321,7 @@ window.LUMIO_DATA = {
             "name": "Cadrage projet — Ressources",
             "app": "notes",
             "props": {
-              "docId": "DOC-02"
+              "openNote": "DOC-02"
             }
           }
         ]
@@ -323,7 +336,7 @@ window.LUMIO_DATA = {
             "name": "CR réunion pipeline B2B",
             "app": "pdf",
             "props": {
-              "docId": "DOC-03"
+              "openDoc": "DOC-03"
             }
           },
           {
@@ -331,7 +344,7 @@ window.LUMIO_DATA = {
             "name": "Veille concurrentielle wearables stress",
             "app": "pdf",
             "props": {
-              "docId": "DOC-04"
+              "openDoc": "DOC-04"
             }
           }
         ]
@@ -346,7 +359,7 @@ window.LUMIO_DATA = {
             "name": "Questions préparatoires board —",
             "app": "mail",
             "props": {
-              "docId": "DOC-05"
+              "openId": "DOC-05"
             }
           },
           {
@@ -354,7 +367,7 @@ window.LUMIO_DATA = {
             "name": "Marché européen des wearables",
             "app": "pdf",
             "props": {
-              "docId": "DOC-06"
+              "openDoc": "DOC-06"
             }
           }
         ]
@@ -369,7 +382,7 @@ window.LUMIO_DATA = {
             "name": "Alerte : concurrent Nurosym",
             "app": "mail",
             "props": {
-              "docId": "DOC-07"
+              "openId": "DOC-07"
             }
           }
         ]
@@ -384,7 +397,7 @@ window.LUMIO_DATA = {
             "name": "Retour sur draft recommandations",
             "app": "mail",
             "props": {
-              "docId": "DOC-08"
+              "openId": "DOC-08"
             }
           }
         ]
@@ -399,7 +412,7 @@ window.LUMIO_DATA = {
             "name": "Théo Marczak — CEO",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_theo_marczak.html"
+              "openPortrait": "theo"
             }
           },
           {
@@ -407,7 +420,7 @@ window.LUMIO_DATA = {
             "name": "Sonia Ferracci — Dir. Marketing",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_sonia_ferracci.html"
+              "openPortrait": "sonia"
             }
           },
           {
@@ -415,7 +428,7 @@ window.LUMIO_DATA = {
             "name": "Camille Ott — Partenariats B2B",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_camille_ott.html"
+              "openPortrait": "camille"
             }
           },
           {
@@ -423,7 +436,7 @@ window.LUMIO_DATA = {
             "name": "Yassine Morel — Content Manager",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_yassine_morel.html"
+              "openPortrait": "yassine"
             }
           },
           {
@@ -431,7 +444,7 @@ window.LUMIO_DATA = {
             "name": "Jakob Rein — Northgate Capital",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_jakob_rein.html"
+              "openPortrait": "jakob"
             }
           }
         ]
@@ -439,6 +452,7 @@ window.LUMIO_DATA = {
     },
     "order": [
       "guide",
+      "mission",
       "acte1",
       "acte2",
       "acte3",
@@ -447,6 +461,20 @@ window.LUMIO_DATA = {
       "portraits"
     ]
   },
+  "portraits": [
+    { "key": "theo", "id": "portrait-theo", "title": "Théo Marczak — CEO", "tabTitle": "Théo Marczak", "favicon": "T", "faviconColor": "#0a3d62", "host": "lusinedigitale.fr", "url": "lusinedigitale.fr/portrait/theo-marczak", "file": "portrais/portrait_theo_marczak.html" },
+    { "key": "sonia", "id": "portrait-sonia", "title": "Sonia Ferracci — Dir. Marketing", "tabTitle": "Sonia Ferracci", "favicon": "S", "faviconColor": "#a02020", "host": "cbnews.fr", "url": "cbnews.fr/portrait/sonia-ferracci", "file": "portrais/portrait_sonia_ferracci.html" },
+    { "key": "camille", "id": "portrait-camille", "title": "Camille Ott — Partenariats B2B", "tabTitle": "Camille Ott", "favicon": "C", "faviconColor": "#1a6641", "host": "actionco.fr", "url": "actionco.fr/portrait/camille-ott", "file": "portrais/portrait_camille_ott.html" },
+    { "key": "yassine", "id": "portrait-yassine", "title": "Yassine Morel — Content Manager", "tabTitle": "Yassine Morel", "favicon": "Y", "faviconColor": "#e85d3a", "host": "maddyness.com", "url": "maddyness.com/portrait/yassine-morel", "file": "portrais/portrait_yassine_morel.html" },
+    { "key": "jakob", "id": "portrait-jakob", "title": "Jakob Rein — Northgate Capital", "tabTitle": "Jakob Rein", "favicon": "J", "faviconColor": "#1b3a6b", "host": "forbes.fr", "url": "forbes.fr/portrait/jakob-rein", "file": "portrais/portrait_jakob_rein.html" }
+  ],
+  "desktopIcons": [
+    { "app": "finder", "folder": "mission", "label": "Mission", "kind": "folder" },
+    { "app": "finder", "folder": "portraits", "label": "Portraits équipe", "kind": "folder" },
+    { "app": "mail", "label": "Mail", "kind": "app" },
+    { "app": "slack", "label": "Slack", "kind": "app" },
+    { "app": "notepad", "label": "Mes notes.txt", "kind": "app" }
+  ],
   "calendar": {
     "monthLabel": "Mars",
     "todayLabel": "Jour 1 / 18",
