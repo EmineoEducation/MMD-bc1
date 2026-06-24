@@ -408,46 +408,46 @@ window.LUMIO_DATA = {
         "icon": "🪪",
         "items": [
           {
-            "kind": "html",
-            "name": "Théo Marczak — CEO",
-            "app": "browser",
-            "props": {
-              "openPortrait": "theo"
-            }
+                    "kind": "html",
+                    "name": "Théo Marczak — CEO",
+                    "app": "browser",
+                    "props": {
+                              "openPortrait": "theo"
+                    }
           },
           {
-            "kind": "html",
-            "name": "Sonia Ferracci — Dir. Marketing",
-            "app": "browser",
-            "props": {
-              "openPortrait": "sonia"
-            }
+                    "kind": "html",
+                    "name": "Sonia Ferracci — Dir. Marketing",
+                    "app": "browser",
+                    "props": {
+                              "openPortrait": "sonia"
+                    }
           },
           {
-            "kind": "html",
-            "name": "Camille Ott — Partenariats B2B",
-            "app": "browser",
-            "props": {
-              "openPortrait": "camille"
-            }
+                    "kind": "html",
+                    "name": "Camille Ott — Partenariats B2B",
+                    "app": "browser",
+                    "props": {
+                              "openPortrait": "camille"
+                    }
           },
           {
-            "kind": "html",
-            "name": "Yassine Morel — Content Manager",
-            "app": "browser",
-            "props": {
-              "openPortrait": "yassine"
-            }
+                    "kind": "html",
+                    "name": "Yassine Morel — Content Manager",
+                    "app": "browser",
+                    "props": {
+                              "openPortrait": "yassine"
+                    }
           },
           {
-            "kind": "html",
-            "name": "Jakob Rein — Northgate Capital",
-            "app": "browser",
-            "props": {
-              "openPortrait": "jakob"
-            }
+                    "kind": "html",
+                    "name": "Jakob Rein — Northgate Capital",
+                    "app": "browser",
+                    "props": {
+                              "openPortrait": "jakob"
+                    }
           }
-        ]
+          ]
       }
     },
     "order": [
@@ -692,6 +692,14 @@ window.LUMIO_DATA = {
     "body": "Le marché français du wearable B2B dédié à la santé au travail a franchi un seuil symbolique en ce début 2025. Selon une étude IDC publiée le 10 mars, les grands comptes corporate — CAC 40, mutuelles, établissements de santé publics — ont budgété en moyenne 1,2 million d'euros chacun pour des solutions de monitoring physiologique des salariés sur l'exercice 2025-2026, soit une hausse de 34 % par rapport à l'année précédente. La pression réglementaire issue de la loi Santé au Travail de 2021, dont les décrets d'application les plus contraignants entrent en vigueur au 1er juillet prochain, accélère brutalement les calendriers d'achat. Or, les acteurs américains et suisses ont pris une longueur d'avance décisive : Garmin Health dispose désormais d'une force commerciale dédiée grands comptes en France, quand Withings Pro revendique une certification CE dispositif médical de classe IIa obtenue en janvier. Face à eux, les pépites françaises, souvent mieux positionnées sur la finesse algorithmique et la conformité RGPD, peinent à faire valoir leur différence dans les appels d'offres, faute de dossiers de preuve structurés et de références institutionnelles visibles. 'Le marché ne va pas attendre que les startups françaises finissent leur roadmap produit', tranche Pierre-Alexis Vidal, analyste santé numérique chez Xerfi. 'D'ici septembre, les slots budgétaires des grands comptes seront verrouillés pour dix-huit mois.'"
   }
 };
+
+
+// ── Correctifs RETEX juin 2026 ── injectés après LUMIO_DATA ──────────────
+if (!window.LUMIO_DATA.finder.folders.mission) { window.LUMIO_DATA.finder.folders.mission = {"title": "Mission — Dossier complet", "sidebar": "Mission", "icon": "🗂", "items": [{"kind": "folder", "name": "Acte 1 — Ancrage", "folder": "acte1"}, {"kind": "folder", "name": "Acte 2 — Entrée affaire", "folder": "acte2"}, {"kind": "folder", "name": "Acte 3 — Diagnostic", "folder": "acte3"}, {"kind": "folder", "name": "Acte 4 — Production", "folder": "acte4"}, {"kind": "folder", "name": "Acte 5 — Réflexion", "folder": "acte5"}, {"kind": "folder", "name": "Portraits équipe", "folder": "portraits"}]}; }
+if (!window.LUMIO_DATA.finder.order.includes('mission')) { var _o=window.LUMIO_DATA.finder.order; window.LUMIO_DATA.finder.order = ['guide','mission',..._o.filter(x=>x!=='guide')]; }
+if (!window.LUMIO_DATA.portraits || !window.LUMIO_DATA.portraits.length) { window.LUMIO_DATA.portraits = [{"key": "theo", "id": "portrait-theo", "title": "Théo Marczak — CEO", "tabTitle": "Théo Marczak", "favicon": "T", "faviconColor": "#0a3d62", "host": "lusinedigitale.fr", "url": "lusinedigitale.fr/portrait/theo-marczak", "file": "portrais/portrait_theo_marczak.html"}, {"key": "sonia", "id": "portrait-sonia", "title": "Sonia Ferracci — Dir. Marketing", "tabTitle": "Sonia Ferracci", "favicon": "S", "faviconColor": "#a02020", "host": "cbnews.fr", "url": "cbnews.fr/portrait/sonia-ferracci", "file": "portrais/portrait_sonia_ferracci.html"}, {"key": "camille", "id": "portrait-camille", "title": "Camille Ott — Partenariats B2B", "tabTitle": "Camille Ott", "favicon": "C", "faviconColor": "#1a6641", "host": "actionco.fr", "url": "actionco.fr/portrait/camille-ott", "file": "portrais/portrait_camille_ott.html"}, {"key": "yassine", "id": "portrait-yassine", "title": "Yassine Morel — Content Manager", "tabTitle": "Yassine Morel", "favicon": "Y", "faviconColor": "#e85d3a", "host": "maddyness.com", "url": "maddyness.com/portrait/yassine-morel", "file": "portrais/portrait_yassine_morel.html"}, {"key": "jakob", "id": "portrait-jakob", "title": "Jakob Rein — Northgate Capital", "tabTitle": "Jakob Rein", "favicon": "J", "faviconColor": "#1b3a6b", "host": "forbes.fr", "url": "forbes.fr/portrait/jakob-rein", "file": "portrais/portrait_jakob_rein.html"}]; }
+if (!window.LUMIO_DATA.desktopIcons) { window.LUMIO_DATA.desktopIcons = [{"app": "finder", "folder": "mission", "label": "Mission", "kind": "folder"}, {"app": "finder", "folder": "portraits", "label": "Portraits équipe", "kind": "folder"}, {"app": "mail", "label": "Mail", "kind": "app"}, {"app": "slack", "label": "Slack", "kind": "app"}, {"app": "notepad", "label": "Mes notes.txt", "kind": "app"}]; }
+if (!window.LUMIO_DATA.voiceMemos || !window.LUMIO_DATA.voiceMemos.length) { window.LUMIO_DATA.voiceMemos = [{"title": "Débrief RDV — partenaire stratégique", "author": "Camille Ott", "role": "Responsable partenariats B2B", "date": "Mars 2025", "context": "mémo dicté après réunion", "durationSec": 44, "transcript": "Réunion ce matin avec le partenaire clé. Le message principal : ils veulent avancer, mais pas sans voir la certification MDR progresser. Côté budget, la fourchette est réaliste — ils sont prêts à discuter. Ce qui bloque, c'est la souveraineté des données : hébergement France, audit annuel, accès self-service. Je leur ai dit qu'on pouvait s'engager sur ce point d'ici fin mars. À valider avec Théo avant que je confirme."}, {"title": "Note terrain — signaux B2B semaine", "author": "Camille Ott", "role": "Responsable partenariats B2B", "date": "Avril 2025", "context": "mémo dicté en déplacement", "durationSec": 36, "transcript": "Trois signaux forts cette semaine. Un : les DSI bloquent systématiquement sur RGPD dès qu'on parle de wearable — sans hébergement local certifié, on ne passe pas. Deux : le sujet est remonté au niveau comité de direction dans deux entreprises sur trois — la décision n'est plus RH, elle est stratégique. Trois : les mutuelles commencent à nous solliciter directement pour des offres packagées. C'est un canal qu'on n'avait pas prévu et qui mérite qu'on y consacre du temps."}]; }
 
 window.PAC_CONFIG = {
   "bloc": "bc1",
