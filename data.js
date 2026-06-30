@@ -168,7 +168,7 @@ window.LUMIO_DATA = {
             },
             {
               "type": "callout",
-              "text": "⚠ LIMITES DE CETTE SYNTHÈSE — À compléter impérativement avant le board du 10 avril : (1) Sources quasi exclusivement anglophones et B2C — biais de sélection probable sur les acteurs franco-français. (2) Aucune donnée collectée sur l'accessibilité des interfaces (WCAG, RQTH, ergonomie cognitive) pour aucun des trois acteurs. (3) Les prix B2B cités sont des estimations publiques, non négociés — écarts possibles sur volumes grands comptes. (4) Nurosym et Withings Pro n'ont pas fait l'objet d'une analyse RSE (matériaux, fin de vie, bilan carbone produit). Ces angles manquants fragilisent toute recommandation stratégique à ce stade."
+              "text": "⚠ LIMITES DE CETTE SYNTHÈSE — À finaliser impérativement avant le board du 10 avril : (1) Sources quasi exclusivement anglophones et B2C — biais de sélection probable sur les acteurs franco-français. (2) Aucune donnée collectée sur l'accessibilité des interfaces (WCAG, RQTH, ergonomie cognitive) pour aucun des trois acteurs. (3) Les prix B2B cités sont des estimations publiques, non négociés — écarts possibles sur volumes grands comptes. (4) Nurosym et Withings Pro n'ont pas fait l'objet d'une analyse RSE (matériaux, fin de vie, bilan carbone produit). Ces angles manquants fragilisent toute recommandation stratégique à ce stade."
             }
           ]
         }
@@ -286,8 +286,21 @@ window.LUMIO_DATA = {
             "kind": "pdf",
             "name": "Guide de mission",
             "app": "pdf",
-            "props": {}
+            "props": { "openGuide": true }
           }
+        ]
+      },
+      "mission": {
+        "title": "Mission — Dossier complet",
+        "sidebar": "Mission",
+        "icon": "🗂",
+        "items": [
+          { "kind": "folder", "name": "Acte 1 — Ancrage", "folder": "acte1" },
+          { "kind": "folder", "name": "Acte 2 — Entrée affaire", "folder": "acte2" },
+          { "kind": "folder", "name": "Acte 3 — Diagnostic", "folder": "acte3" },
+          { "kind": "folder", "name": "Acte 4 — Production", "folder": "acte4" },
+          { "kind": "folder", "name": "Acte 5 — Réflexion", "folder": "acte5" },
+          { "kind": "folder", "name": "Portraits équipe", "folder": "portraits" }
         ]
       },
       "acte1": {
@@ -300,7 +313,7 @@ window.LUMIO_DATA = {
             "name": "Brief stratégique — Analyse",
             "app": "mail",
             "props": {
-              "docId": "DOC-01"
+              "openId": "DOC-01"
             }
           },
           {
@@ -308,7 +321,7 @@ window.LUMIO_DATA = {
             "name": "Cadrage projet — Ressources",
             "app": "notes",
             "props": {
-              "docId": "DOC-02"
+              "openNote": "DOC-02"
             }
           }
         ]
@@ -323,7 +336,7 @@ window.LUMIO_DATA = {
             "name": "CR réunion pipeline B2B",
             "app": "pdf",
             "props": {
-              "docId": "DOC-03"
+              "openDoc": "DOC-03"
             }
           },
           {
@@ -331,7 +344,7 @@ window.LUMIO_DATA = {
             "name": "Veille concurrentielle wearables stress",
             "app": "pdf",
             "props": {
-              "docId": "DOC-04"
+              "openDoc": "DOC-04"
             }
           }
         ]
@@ -346,7 +359,7 @@ window.LUMIO_DATA = {
             "name": "Questions préparatoires board —",
             "app": "mail",
             "props": {
-              "docId": "DOC-05"
+              "openId": "DOC-05"
             }
           },
           {
@@ -354,7 +367,7 @@ window.LUMIO_DATA = {
             "name": "Marché européen des wearables",
             "app": "pdf",
             "props": {
-              "docId": "DOC-06"
+              "openDoc": "DOC-06"
             }
           }
         ]
@@ -369,7 +382,7 @@ window.LUMIO_DATA = {
             "name": "Alerte : concurrent Nurosym",
             "app": "mail",
             "props": {
-              "docId": "DOC-07"
+              "openId": "DOC-07"
             }
           }
         ]
@@ -384,7 +397,7 @@ window.LUMIO_DATA = {
             "name": "Retour sur draft recommandations",
             "app": "mail",
             "props": {
-              "docId": "DOC-08"
+              "openId": "DOC-08"
             }
           }
         ]
@@ -399,7 +412,7 @@ window.LUMIO_DATA = {
             "name": "Théo Marczak — CEO",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_theo_marczak.html"
+              "openPortrait": "theo"
             }
           },
           {
@@ -407,7 +420,7 @@ window.LUMIO_DATA = {
             "name": "Sonia Ferracci — Dir. Marketing",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_sonia_ferracci.html"
+              "openPortrait": "sonia"
             }
           },
           {
@@ -415,7 +428,7 @@ window.LUMIO_DATA = {
             "name": "Camille Ott — Partenariats B2B",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_camille_ott.html"
+              "openPortrait": "camille"
             }
           },
           {
@@ -423,7 +436,7 @@ window.LUMIO_DATA = {
             "name": "Yassine Morel — Content Manager",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_yassine_morel.html"
+              "openPortrait": "yassine"
             }
           },
           {
@@ -431,7 +444,7 @@ window.LUMIO_DATA = {
             "name": "Jakob Rein — Northgate Capital",
             "app": "browser",
             "props": {
-              "url": "portraits/portrait_jakob_rein.html"
+              "openPortrait": "jakob"
             }
           }
         ]
@@ -439,6 +452,7 @@ window.LUMIO_DATA = {
     },
     "order": [
       "guide",
+      "mission",
       "acte1",
       "acte2",
       "acte3",
@@ -447,6 +461,49 @@ window.LUMIO_DATA = {
       "portraits"
     ]
   },
+  "portraits": [
+    { "key": "theo", "id": "portrait-theo", "title": "Théo Marczak — CEO", "tabTitle": "Théo Marczak", "favicon": "T", "faviconColor": "#0a3d62", "host": "lusinedigitale.fr", "url": "lusinedigitale.fr/portrait/theo-marczak", "file": "portrais/portrait_theo_marczak.html" },
+    { "key": "sonia", "id": "portrait-sonia", "title": "Sonia Ferracci — Dir. Marketing", "tabTitle": "Sonia Ferracci", "favicon": "S", "faviconColor": "#a02020", "host": "cbnews.fr", "url": "cbnews.fr/portrait/sonia-ferracci", "file": "portrais/portrait_sonia_ferracci.html" },
+    { "key": "camille", "id": "portrait-camille", "title": "Camille Ott — Partenariats B2B", "tabTitle": "Camille Ott", "favicon": "C", "faviconColor": "#1a6641", "host": "actionco.fr", "url": "actionco.fr/portrait/camille-ott", "file": "portrais/portrait_camille_ott.html" },
+    { "key": "yassine", "id": "portrait-yassine", "title": "Yassine Morel — Content Manager", "tabTitle": "Yassine Morel", "favicon": "Y", "faviconColor": "#e85d3a", "host": "maddyness.com", "url": "maddyness.com/portrait/yassine-morel", "file": "portrais/portrait_yassine_morel.html" },
+    { "key": "jakob", "id": "portrait-jakob", "title": "Jakob Rein — Northgate Capital", "tabTitle": "Jakob Rein", "favicon": "J", "faviconColor": "#1b3a6b", "host": "forbes.fr", "url": "forbes.fr/portrait/jakob-rein", "file": "portrais/portrait_jakob_rein.html" }
+  ],
+  "desktopIcons": [
+    { "app": "finder", "folder": "mission", "label": "Mission", "kind": "folder" },
+    { "app": "finder", "folder": "portraits", "label": "Portraits équipe", "kind": "folder" },
+    { "app": "mail", "label": "Mail", "kind": "app" },
+    { "app": "slack", "label": "Slack", "kind": "app" },
+    { "app": "notepad", "label": "Mes notes.txt", "kind": "app" }
+  ],
+  "voiceMemos": [
+    {
+      "title": "Débrief RDV — DRH secteur financier",
+      "author": "Camille Ott",
+      "role": "Responsable partenariats B2B",
+      "date": "5 mars 2025",
+      "context": "mémo dicté après rendez-vous",
+      "durationSec": 48,
+      "transcript": "Bon, je sors du rendez-vous avec le groupe financier. Premier réflexe de leur côté : la donnée. Avant même qu'on parle fonctionnalités, leur DSI veut savoir où les données sont hébergées et qui y a accès. HDS, RGPD — ils ne signeront rien sans audit. C'est verrouillant. Note pour Sonia : sans hébergement de santé certifié et sans réponse claire sur la souveraineté, on ne passe pas la porte des grands comptes. Je le remonte tel quel dans le CR."
+    },
+    {
+      "title": "Débrief RDV — RH grande distribution",
+      "author": "Camille Ott",
+      "role": "Responsable partenariats B2B",
+      "date": "8 mars 2025",
+      "context": "mémo dicté en voiture",
+      "durationSec": 41,
+      "transcript": "Rendez-vous distribution. Le sujet qui revient, c'est la résistance interne. La RH m'a dit, je cite à peu près : mon comité social va bloquer ça en cinq minutes si on ne construit pas un discours co-construit avec les syndicats dès le départ. La crainte, c'est la surveillance déguisée. Donc l'angle commercial pur ne suffit pas — il faut un volet dialogue social et anonymisation très en amont. À intégrer dans l'analyse des freins."
+    },
+    {
+      "title": "Note — attente mutuelles (Malakoff)",
+      "author": "Camille Ott",
+      "role": "Responsable partenariats B2B",
+      "date": "11 mars 2025",
+      "context": "mémo dicté",
+      "durationSec": 39,
+      "transcript": "Point mutuelles. Ce qui les intéresse, ce n'est pas la donnée individuelle, c'est la donnée collective. Verbatim Malakoff : si vous nous donnez une cartographie du stress par service ou par tranche horaire, on peut construire des plans d'action. Donc le produit gagnant, c'est un tableau de bord agrégé, anonymisé, sans accès nominatif. Et de plus en plus ils demandent du reporting RSE conforme CSRD — ça c'est nouveau par rapport à l'an dernier."
+    }
+  ],
   "calendar": {
     "monthLabel": "Mars",
     "todayLabel": "Jour 1 / 18",
@@ -620,7 +677,7 @@ window.LUMIO_DATA = {
       "date": "11 mars 2025",
       "headline": "Wearables corporate : le marché du bien-être au travail cherche encore son modèle B2B",
       "lede": "Entre promesses technologiques et réticences RH, les objets connectés dédiés à la santé des salariés peinent à s'imposer dans les grands comptes. Le secteur se structure néanmoins autour de quelques acteurs qui affinent leur proposition de valeur.",
-      "illustration": "PHOTO ILLUSTRATIVE",
+      "illustration": "portraits/Theo_Marczak.png",
       "body": "Le marché européen des wearables de santé en entreprise affiche une croissance de 18 % en 2024, porté par la montée des préoccupations autour des risques psychosociaux et l'intensification des obligations légales pesant sur les employeurs depuis la loi Santé au travail de 2021. Pourtant, les cycles de vente restent longs — souvent supérieurs à neuf mois dans les structures de plus de 500 salariés — et les taux d'adoption terrain décevants par rapport aux ambitions initiales des directions.\n\nLes acteurs historiques du wearable grand public, Garmin en tête avec son offre Garmin Health, accélèrent leur pénétration B2B en s'appuyant sur la notoriété de leurs marques et des API d'intégration aux SIRH. Withings Pro, repositionné depuis 2023 sur les professionnels de santé et les entreprises, propose quant à lui des tableaux de bord agrégés à destination des médecins du travail. Face à ces géants, les startups spécialisées misent sur la précision clinique et la personnalisation des alertes.\n\n« Le vrai différenciateur aujourd'hui, ce n'est plus le capteur, c'est la capacité à transformer la donnée brute en recommandation actionnelle pour les RH et les managers », explique Diane Ferreol, analyste chez Sia Partners, interrogée lors du salon Préventica Paris en février.\n\nLa question de la confidentialité des données reste le principal frein identifié lors des appels d'offres. Selon une étude OpinionWay publiée en janvier 2025, 61 % des DRH interrogés déclarent « ne pas encore faire confiance aux garanties de souveraineté des données » proposées par les éditeurs de solutions wearable. Le RGPD et, plus spécifiquement, le cadre des données de santé imposé par la CNIL, contraignent les acteurs à des architectures techniques coûteuses que seules des certifications comme HDS (Hébergeur de Données de Santé) permettent de valider.\n\nLes mutuelles et assureurs entrent progressivement dans le jeu en tant qu'acheteurs ou co-financeurs de dispositifs. Malakoff Humanis et Harmonie Mutuelle ont toutes deux annoncé des expérimentations avec des startups françaises pour intégrer des wearables dans leurs offres de prévention collective, un signal fort pour un secteur qui cherche des relais de croissance au-delà des directions RSE.\n\nL'accessibilité des dispositifs pour les salariés en situation de handicap constitue également un angle émergent. Plusieurs appels d'offres publics récents, notamment dans le secteur hospitalier, intègrent désormais des critères d'accessibilité cognitive et physique dans leurs cahiers des charges, imposant aux fournisseurs de repenser interfaces et protocoles de port.\n\nLe board de Northgate Capital, actif sur plusieurs dossiers medtech en Europe du Nord, a récemment indiqué dans sa lettre trimestrielle surveiller de près « les acteurs capables de combiner robustesse clinique, conformité réglementaire et scalabilité commerciale » sur ce segment. Une convergence d'exigences qui dessine un marché encore ouvert, mais de plus en plus sélectif."
     }
   ],
@@ -638,6 +695,26 @@ window.LUMIO_DATA = {
 
 window.PAC_CONFIG = {
   "bloc": "bc1",
+  accroche_namescreen: {
+    "subtitle": "Analyser le besoin digital",
+    "role": "consultant·e digital externe",
+    "intro": "Tu es {{STUDENT}}, consultant·e mandaté·e par Théo Marczak (CEO de Lumio Health) pour cartographier le marché du wearable anti-stress et analyser la demande de projet digital. Veille sectorielle, étude concurrentielle, brief commanditaire : tu produis l'analyse d'une demande de projet digital (E1) qui orientera le lancement de l'offre B2B.",
+    "ratio_label": "3 semaines dans la vraie vie",
+    "regles": [
+      {
+        "ico": "📄",
+        "txt": "Tout ce que tu sais, c'est dans les documents de veille et le brief du poste de mission."
+      },
+      {
+        "ico": "🤐",
+        "txt": "Le jury évalue la rigueur de ta veille, la sélection des informations et la qualité de ta reformulation du besoin."
+      },
+      {
+        "ico": "💬",
+        "txt": "Quand tu as une analyse solide → Slack → ton commanditaire. Sa réaction débloque la suite."
+      }
+    ]
+  },
   "titre": "Analyser l'environnement et les besoins digitaux d'un commanditaire",
   "epreuve": "E1. Analyse d'une demande de projet digital",
   "deadline": "14 mars 2025 · 18h00",
@@ -798,10 +875,3 @@ window.PAC_CONFIG = {
 };
 // Alias de compatibilité
 window.PASS_CONFIG = window.PAC_CONFIG;
-
-// [PATCH] Correction bug #1 — voiceMemos fallback pour app-voice.jsx
-// Ces PAC n'utilisent pas l'app Mémos vocaux comme source narrative principale
-// → tableau vide pour éviter le crash au chargement
-if (window.LUMIO_DATA && !window.LUMIO_DATA.voiceMemos && !window.LUMIO_DATA.camilleVerbatims) {
-  window.LUMIO_DATA.voiceMemos = [];
-}
