@@ -875,3 +875,19 @@ window.PAC_CONFIG = {
 };
 // Alias de compatibilité
 window.PASS_CONFIG = window.PAC_CONFIG;
+
+// === [Carte portfolio] — 05/08/2026 · contenu propre au bloc, ajout non destructif ===
+(function () {
+  var c = window.PAC_CONFIG || window.PASS_CONFIG;
+  if (!c) return;
+  c.portfolio = {
+    missionTitre: "Analyser une demande de projet digital avant d'y répondre",
+    miseEnSituation: "Le commanditaire formule une demande d'offre digitale B2B sur le marché du wearable de mesure du stress — un marché où les acteurs installés avancent vite et où l'accessibilité numérique n'est traitée par presque personne. Le brief reçu décrit une solution, pas un besoin.",
+    choix: "Reformuler le brief pour distinguer le besoin déclaré du besoin réel, puis fonder la réponse sur un dispositif de veille au périmètre explicite intégrant l'accessibilité, plutôt que de répondre directement à la solution demandée.",
+    justification: "Répondre à un brief sans le reformuler revient à hériter des angles morts du commanditaire : la reformulation, appuyée sur des données de marché sourcées, est ce qui permet de proposer autre chose qu'une simple exécution.",
+    imageSrc: ""
+  };
+  window.PAC_CONFIG = c;
+  window.PASS_CONFIG = c;
+})();
+// === [Carte portfolio] fin ===
