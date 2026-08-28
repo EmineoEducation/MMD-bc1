@@ -695,6 +695,7 @@ window.LUMIO_DATA = {
 
 window.PAC_CONFIG = {
   "bloc": "bc1",
+  "titreCode": "MMD",
   accroche_namescreen: {
     "subtitle": "Analyser le besoin digital",
     "role": "consultant·e digital externe",
